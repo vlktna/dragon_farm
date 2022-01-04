@@ -716,7 +716,8 @@ VALUES ('medium', 'Multi-colored',
 INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
                           hatching_age, puberty_age, appearance_id, rarity)
 VALUES ('Flame Whipper', 4,
-        null, false, 'Wall climbing;Detachable tail;Stretchable tongue;Uses the tongue to aim its fire (increasing the accuracy);Paralyzing poison stored in its tail',
+        null, false,
+        'Wall climbing;Detachable tail;Stretchable tongue;Uses the tongue to aim its fire (increasing the accuracy);Paralyzing poison stored in its tail',
         'day', 'spring', 1, 7, 45, 0.73);
 INSERT INTO dragon_diet (food_id, dragon_type_id)
 VALUES (3, 45);
@@ -728,7 +729,8 @@ VALUES ('medium', 'Green or blue with black stripes',
 INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
                           hatching_age, puberty_age, appearance_id, rarity)
 VALUES ('Gobsucker', 4,
-        null, false, 'Can produce flammable gas from its rear end to aid in taking off, building speed, flying straight, and defense',
+        null, false,
+        'Can produce flammable gas from its rear end to aid in taking off, building speed, flying straight, and defense',
         'night', 'winter', 2, 15, 46, 0.48);
 
 INSERT INTO dragon_appearance (size, color, fire_type, features)
@@ -750,7 +752,8 @@ INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, a
                           hatching_age, puberty_age, appearance_id, rarity)
 VALUES ('Hobblegrunt', 4,
         'Hobblegrunts are relatively easy to train, as they are calm and peaceful dragons. If a person saves a Hobblegrunt''s life, the dragon will be forever thankful and will stay close to its savior,',
-        true, 'Color changing skin based on mood;Detecting frill;Altering other dragons'' mood by changing its color;Predicting the future',
+        true,
+        'Color changing skin based on mood;Detecting frill;Altering other dragons'' mood by changing its color;Predicting the future',
         'day', 'summer', 3, 17, 48, 0.62);
 INSERT INTO dragon_diet (food_id, dragon_type_id)
 VALUES (3, 48);
@@ -783,182 +786,648 @@ VALUES (11, 50);
 INSERT INTO dragon_diet (food_id, dragon_type_id)
 VALUES (10, 50);
 
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 4,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 42);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (3, 42);
--- -- Strike Class species
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 5,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 31);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (19, 31);
---
---
--- -- Tidal Class species
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 6,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 31);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (19, 31);
---
---
--- -- Tracker Class species
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 7,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 31);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (19, 31);
---
---
--- -- Unknown Class species
---
--- INSERT INTO dragon_appearance (size, color, fire_type, features)
--- VALUES ('medium', '',
---         '',
---         '');
--- INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
---                           hatching_age, puberty_age, appearance_id, rarity)
--- VALUES ('', 8,
---         '',
---         true, '',
---         'night', 'summer', 2, 13, 31);
--- INSERT INTO dragon_diet (food_id, dragon_type_id)
--- VALUES (19, 31);
---
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('small', 'Black and dark green',
+        'Several discreet fire streams',
+        'Double nasal horn');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Night Terror', 4,
+        'Night Terrors are highly trainable dragons both individually or in a group. Throughout the Dragons: Race to the Edge series, Night Terrors are seen being trained to do simple tricks like fetch, trained to utilize their natural alarm instincts to protect the island, and trained to form various shapes in a group.',
+        true, 'Creates massive flocks to appear as a larger dragon to scare off predators',
+        'night', 'winter', 1, 6, 51, 0.67);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 51);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'blue with red spikes',
+        'Methane',
+        'Clubbed tail;Three pairs of eyes');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Red Death', 4,
+        null, false, 'Emits homing signal to control other dragons',
+        'day', 'spring', 4, 13, 52, 0.06);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 52);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (4, 52);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (13, 52);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Purple and white',
+        'Blue explosive flames',
+        'Diamond-shaped wing lobes');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Silver Phantom', 4,
+        null, false, 'Camouflage above the clouds',
+        'day', 'autumn', 5, 14, 53, 0.13);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 53);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (12, 53);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (24, 53);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('small', 'Orange with red spots and purple chin',
+        'Scarlet flames',
+        'Two sets of wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Singetail', 4,
+        null, false, 'Articulated eyes',
+        'day', 'spring', 4, 13, 54, 0.06);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 54);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (25, 54);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (7, 54);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('small', 'Blue and purple',
+        'Explosive molten lava',
+        'Row of triangular spines along the back');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Small Shadow Wing', 4,
+        null, false, 'Dive-bombing',
+        'night', 'winter', 4, 9, 55, 0.23);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 55);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (10, 55);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (11, 55);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('small', 'highlights on back and pale belly',
+        'Propane fire',
+        'Arrow-shaped tail tip');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Terrible Terror', 4,
+        'They seem to be fairly easy to train. Giving them a light to chase can help out for training as this could be great beginner dragon for young Vikings. Or another way of training Terrible Terrors just to feed them, and, showing great trust, the Terror went to sleep next to him. As long as you prove to be of no threat to it, Terrors are easy and docile companions.',
+        true, 'Amazing accuracy',
+        'day', 'summer', 2, 11, 56, 0.72);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 56);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (21, 56);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (12, 56);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Bright yellow with pale blue',
+        'Green and orange flames',
+        'Large crown-like head frill');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Threadtail', 4,
+        null, false, 'Poisonous skin',
+        'day', 'winter', 1, 8, 57, 0.28);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 57);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (10, 57);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Red',
+        'Cyclonic jets of flame',
+        'Large wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Typhoomerang', 4,
+        'Training a Typhoomerang is easiest when the dragon is young. As a baby, they are rather impressionable and trustworthy. However, if one manages to successfully catch its attention and prove that they are of no harm, the Typhoomerang will slowly bond with them.',
+        true, 'Flaming cyclone',
+        'day', 'autumn', 2, 14, 58, 0.89);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 58);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 58);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (13, 58);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Red and black',
+        'Rabid acid flame bursts',
+        'Protruding retractable tusks');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Deathgripper', 5,
+        'Deathgrippers are extremely difficult to train, but a person can train one by imprinting on it as a hatchling immediately after it emerges from the egg.',
+        true, 'Sedative sting',
+        'night', 'spring', 4, 13, 59, 0.57);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 59);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 59);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (21, 59);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'White with a blue and pink tint',
+        'Acetylene and oxygen-shaped plasma charges',
+        'Cat-like eyes');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Blue monster', 5,
+        'Due to not having too much contact with humans, Light Furies are very aggressive towards them. However, a Light Fury''s trust can be slowly earned. If a person helps a Light Fury or saves its life, the dragon will return the favor, and will from then on be a friend.',
+        true, 'Cloaking via plasma blasts',
+        'day', 'winter', 4, 13, 60, 0.05);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 60);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 60);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 60);
+
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'White with a blue and pink tint',
+        'Acetylene and oxygen-shaped plasma charges',
+        'Cat-like eyes');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Light Fury', 5,
+        'Due to not having too much contact with humans, Light Furies are very aggressive towards them. However, a Light Fury''s trust can be slowly earned. If a person helps a Light Fury or saves its life, the dragon will return the favor, and will from then on be a friend.',
+        true, 'Cloaking via plasma blasts',
+        'day', 'winter', 4, 13, 61, 0.05);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 61);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 61);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 61);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Jet black',
+        'Acetylene and oxygen-shaped plasma charges',
+        'Cat-like eyes');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Night Fury', 5,
+        'A wild Night Fury will likely just fly away and ignore you unless you catch its interest or prevent its flight. It is preferable to catch it without hurting it. Another way is to find its egg and train it from when it hatches.',
+        true, 'Dive-bombing',
+        'day', 'winter', 2, 12, 62, 0.06);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 62);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 62);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (8, 62);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Dark gray with purple markings',
+        'Lightning',
+        'Sharp metallic spines on the back');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Skrill', 5,
+        'Depending on the method, training a Skrill can be incredibly difficult or close to impossible. They are aggressive and stubborn, refusing to be trained even in times of crisis. However, by treating it with respect and showing it mercy instead of hurting it, thus showing that you can accept the Skrill for what it is, you can gain its trust.',
+        true, 'Electrokinesis',
+        'night', 'winter', 1, 8, 63, 0.42);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (11, 63);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 63);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 63);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Shades of Green',
+        'Unidentified breath weapon',
+        'Huge wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Songwing', 5,
+        null, false, 'Prehensile tail',
+        'night', 'summer', 2, 9, 64, 0.28);
+
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Snowy white with blue highlights',
+        'Frost fusillade',
+        'Long ledge under chin');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Snow Wraith', 5,
+        null, false, 'Thermal vision',
+        'night', 'winter', 5, 15, 65, 0.74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 65);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 65);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (23, 65);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Brownish-black',
+        'Continuous streams of flames',
+        'Three tails that tie together to form one');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Triple Stryke', 5,
+        'These dragons are fierce and vicious, thus they are extremely hard to train. However, these dragons do repay their debts. If shown mercy and kindness, the dragon will treat you with respect and compassion and will stop at nothing to protect you.',
+        true, 'Unique venom in each stinger',
+        'day', 'summer', 2, 7, 66, 0.66);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 66);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (15, 66);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 66);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Dark brown with pale belly',
+        'Hail',
+        'Fur-like scales');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Woolly Howl', 5,
+        null, false, 'Belly blends in with the white clouds',
+        'day', 'spring', 5, 21, 67, 0.12);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('gigantic', 'Snowy white',
+        'Masses of water that freeze',
+        'Large spikes protruding from back of neck');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Bewilderbeast', 6,
+        null, false, 'Mind controlling dragons',
+        'day', 'winter', 7, 17, 68, 0.23);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 68);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('gigantic', 'Blue with dark green spots',
+        'water blast',
+        'Large fin on the back');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Fathomfin', 6,
+        null, false, 'Expandable gullet',
+        'day', 'spring', 2, 5, 69, 0.53);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 69);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('gigantic', 'Dark navy blue',
+        'water blast',
+        'Fins instead of legs');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Luminous Krayfin', 6,
+        'Due to its sociable and intelligent nature, the Luminuous Krayfin appears to be trainable. What is unclear is whether a Krayfin is trainable if raised from an egg or if an adult is also trainable.',
+        true, 'Swimming Speed',
+        'night', 'autumn', 2, 11, 70, 0.49);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 70);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (4, 70);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 70);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Deep purple',
+        'huge blasts',
+        'Long tendrils on chin');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Purple Death', 6,
+        null, false, 'Creating seaquakes',
+        'night', 'spring', 2, 11, 71, 0.45);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 71);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 71);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (21, 71);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (22, 71);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Deep blue',
+        'acid',
+        'Long tail');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Submaripper', 6,
+        null, false, 'Creating massive whirlpools to sink ships',
+        'day', 'summer', 2, 10, 72, 0.37);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 72);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (17, 72);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Sandy brown',
+        'Hardened balls',
+        'Spikes on wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Sand Wraith', 6,
+        null, false, 'Camouflage',
+        'day', 'spring', 1, 7, 73, 0.59);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 73);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (10, 73);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Sea Green',
+        'boiling hot water',
+        'Nasal horn');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Scauldron', 6,
+        'training a Scauldron is incredibly difficult and close to impossible due to their aggressive nature. If you want to train a Scauldron, the best way to start is simply to cover yourself in water or anything that smells like fish.',
+        true, 'Venom',
+        'night', 'winter', 2, 13, 74, 0.86);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (7, 74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (17, 74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (16, 74);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Sea blue and black',
+        'Electric stun charges',
+        'Two heads');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Seashocker', 6,
+        'You can train a Seashocker if you heal its injuries or get back to its pond.',
+        true, 'Cutting ice with its dorsal blades',
+        'day', 'spring', 7, 11, 75, 0.75);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 75);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Red with orange',
+        'Cannonball-sized plasma charges',
+        'Long but relatively small wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Shellfire', 6,
+        'It is currently unknown whether or not Shellfires can be trained, as Viggo''s Shellfire, the only known individual, was so agitated that, after being captured and forced to battle a Submaripper and Dragon Riders by the Dragon Hunters, it immediately retreated to the ocean''s depths, and has not been spotted since.',
+        true, 'Expelling red algae from gills',
+        'day', 'autumn', 2, 7, 76, 0.59);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 76);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 76);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (20, 76);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (13, 76);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'green',
+        'Bio-electricity',
+        'Tendrils on the chin');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Shockjaw', 6,
+        null, false, 'Electrokinesis',
+        'night', 'winter', 3, 13, 77, 0.56);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 77);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (17, 77);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Sea green',
+        'Streams of acid',
+        'Fin-like wings');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Sliquifier', 6,
+        null, false, 'Supersonic swimming speed',
+        'day', 'summer', 4, 11, 78, 0.24);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 78);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('gigantic', 'Blue with yellow stripes',
+        'Whirlpool',
+        'Webbed feet');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Ancient submaripper', 6,
+        'While it is unknown if a Submaripper can be fully trained, it can be tamed to a certain extent. If one helps or saves a Submaripper, the dragon will stop being aggressive and will even return the favour. The Submaripper''s undying loyalty will have been earned.',
+        true, 'Gas bubbles',
+        'day', 'spring', 2, 8, 79, 0.73);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (4, 79);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (5, 79);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (6, 79);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (7, 79);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (8, 79);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('small', 'Mainly blue',
+        'Fire balls',
+        'Expandable mouth');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Thunderdrum', 6,
+        'Training a Thunderdrum, especially as an adult is a challenge partly due to their difficult personality and deafness. Showing protection and gaining the Thunderdrum`s trust is an easier way to train it, as seen by Stoick and Thornado.',
+        true, 'Expelling air from body to swim',
+        'night', 'winter', 2, 17, 80, 0.84);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 80);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (17, 80);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 80);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 80);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Cyan',
+        'Acid blasts',
+        'Large fan-like tail fin');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Tide Glider', 6,
+        null, false, 'Healing saliva',
+        'day', 'spring', 7, 23, 81, 0.13);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 81);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'red',
+        'Balls of fire',
+        'Long neck');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Windwalker', 6,
+        null, false, 'Electrokinesis',
+        'day', 'autumn', 2, 6, 82, 0.46);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (12, 82);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (25, 82);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 82);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Light Orange',
+        'Massive balls of fire',
+        'Large fan-like tail fin');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Moldruffle', 7,
+        'To train a Deadly Nadder, one must very carefully approach the dragon from its tail. Then, you must gently smooth its spikes down. In addition, one can also train a Nadder by sneaking up on its blind spot, then scratching its chin affectionately.',
+        true, 'Sharp long ranged vision',
+        'night', 'summer', 5, 9, 83, 0.67);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 83);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (11, 83);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (22, 83);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 83);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Variety of colors',
+        'Magnesium fire',
+        'Nasal horn');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Deadly Nadder', 7,
+        'To train a Deadly Nadder, one must very carefully approach the dragon from its tail. Then, you must gently smooth its spikes down. In addition, one can also train a Nadder by sneaking up on its blind spot, then scratching its chin affectionately.',
+        true, 'Spine shot',
+        'day', 'summer', 2, 9, 84, 0.73);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 84);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (4, 84);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (25, 84);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Turquoise Green',
+        'Sonic blasts',
+        'Sail on back');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Mudraker', 7,
+        null, false, 'Sonic blasts that travel through the water at intense speeds',
+        'night', 'spring', 2, 12, 85, 0.84);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 85);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 85);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (18, 85);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 85);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (13, 85);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Green with brown trim',
+        'Flaming rock "missiles"',
+        'Jackhammer-like maw');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Rumblehorn', 7,
+        'Rumblehorns always have their snouts to the ground, sniffing around for something edible. They can be aggressive, but they are friendly towards their riders. Their food of choice is unknown, but it is known that they are carnivorous. They are also highly intelligent and determined. They run like rhinoceroses.',
+        true, 'Tracking',
+        'day', 'winter', 5, 12, 86, 0.62);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (1, 86);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 86);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (10, 86);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (9, 86);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('large', 'Different colored patterns',
+        'Fire-sneeze that can melt nearly anything',
+        'Colorful exterior');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Snifflehunch', 7,
+        'Snifflehunches are relatively easy to train, as they are calm and friendly dragons. If a person saves a Snifflehunch''s life, the dragon will be forever thankful and will stay close to its savior',
+        true, 'Sniffing out friends and foes',
+        'day', 'spring', 2, 8, 87, 0.74);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (7, 87);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (8, 87);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (14, 87);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 87);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('gigantic', 'Blue with yellow stripes',
+        'Whirlpool',
+        'Webbed feet');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Submaripper horror', 7,
+        'While it is unknown if a Submaripper can be fully trained, it can be tamed to a certain extent. If one helps or saves a Submaripper, the dragon will stop being aggressive and will even return the favour. The Submaripper''s undying loyalty will have been earned.',
+        true, 'Creating whirlpools and tidal waves',
+        'night', 'winter', 2, 6, 88, 0.35);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (3, 88);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (16, 88);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'Wide variety of colors',
+        'Green/orange fire',
+        'Sail on back');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Thunderclaw', 7,
+        'Thunderclaws are relatively easy to train, as they are mostly peaceful dragons. If a person saves a Thunderclaw''s life, the dragon will be forever thankful and will stay close to its savior',
+        true, 'Tracking',
+        'night', 'autumn', 3, 11, 89, 0.82);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (2, 89);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (6, 89);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (7, 89);
+
+INSERT INTO dragon_appearance (size, color, fire_type, features)
+VALUES ('medium', 'green',
+        'Green or Orange Fireballs',
+        'Bumps all over body');
+INSERT INTO dragon_types (name, class_id, way_of_taming, trainable, abilities, active_time, mating_season,
+                          hatching_age, puberty_age, appearance_id, rarity)
+VALUES ('Windgnasher', 7,
+        'Windgnashers are relatively easy to train, as they are calm and friendly dragons. If a person saves a Windgnasher''s life, the dragon will be forever thankful and will stay close to its savior',
+        true, 'Tracking',
+        'night', 'summer', 4, 13, 90, 0.17);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (19, 90);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (25, 90);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (21, 90);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (17, 90);
+INSERT INTO dragon_diet (food_id, dragon_type_id)
+VALUES (6, 90);
