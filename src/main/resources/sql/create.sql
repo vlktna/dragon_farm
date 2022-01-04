@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS dragon_types
     hatching_age  SMALLINT    NOT NULL CHECK (hatching_age > 0),
     puberty_age   SMALLINT    NOT NULL CHECK (puberty_age > 0),
     appearance_id SMALLINT    NOT NULL UNIQUE REFERENCES dragon_appearance,
-    rarity        FLOAT       NOT NULL CHECK (rarity > 0 AND rarity < 1)
+    rarity        FLOAT       NOT NULL CHECK (rarity > 0 AND rarity < 1),
     CHECK (hatching_age < puberty_age)
 );
 CREATE TABLE IF NOT EXISTS dragon_diet
@@ -162,4 +162,131 @@ CREATE TABLE IF NOT EXISTS children
     child_id      INT      NOT NULL UNIQUE PRIMARY KEY REFERENCES dragons,
     parents_id    SMALLINT NOT NULL REFERENCES dragon_couples,
     date_of_birth DATE     NOT NULL
+);
+CREATE TABLE IF NOT EXISTS terrains
+(
+    id        SMALLSERIAL PRIMARY KEY,
+    name      VARCHAR(50) NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS places
+(
+    id        	SMALLSERIAL PRIMARY KEY,
+    terrain_id  SMALLINT REFERENCES terrains ON DELETE CASCADE ON UPDATE CASCADE,
+    name	VARCHAR(100) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS habitat
+(
+    terrain_id	   SMALLINT REFERENCES terrains ON DELETE CASCADE ON UPDATE CASCADE,
+    dragon_type_id SMALLINT REFERENCES dragon_types ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (terrain_id, dragon_type_id)
+);
+CREATE TABLE IF NOT EXISTS search_teams
+(
+    id        	SMALLSERIAL PRIMARY KEY,
+    leader      SMALLINT NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS search_member
+(
+    searcher    SMALLINT PRIMARY KEY REFERENCES workers ON DELETE CASCADE ON UPDATE CASCADE,
+    number_team SMALLINT NOT NULL REFERENCES search_teams ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS orders
+(
+    id        	SERIAL    PRIMARY KEY,
+    declarant   SMALLINT  REFERENCES workers ON DELETE SET NULL ON UPDATE CASCADE,
+    dragon_type SMALLINT  NOT NULL REFERENCES dragon_types ON DELETE CASCADE ON UPDATE CASCADE,
+    status      BOOLEAN   NOT NULL,
+    time	TIMESTAMP NOT NULL
+);
+CREATE TABLE IF NOT EXISTS search_outing
+(
+    id        	SERIAL     PRIMARY KEY,
+    place_id    SMALLINT   NOT NULL REFERENCES places ON DELETE CASCADE ON UPDATE CASCADE,
+    order_id    INT UNIQUE REFERENCES orders ON DELETE CASCADE ON UPDATE CASCADE,
+    time_start  TIMESTAMP  NOT NULL,
+    time_finish TIMESTAMP,
+    result      BOOLEAN,
+    team_id     SMALLINT   NOT NULL REFERENCES search_teams ON DELETE CASCADE ON UPDATE CASCADE,
+    CHECK(time_finish > time_start)
+);
+CREATE TABLE IF NOT EXISTS find_types
+(
+    id   SMALLSERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS evidence
+(
+    id        	   SERIAL     PRIMARY KEY,
+    find_type      SMALLINT  NOT NULL REFERENCES find_types ON DELETE CASCADE ON UPDATE CASCADE,
+    characteristic VARCHAR(50) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS search_types
+(
+    id   SMALLSERIAL PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS seartch_history
+(
+    id        	     BIGSERIAL    PRIMARY KEY,
+    search_outing_id INT NOT NULL REFERENCES search_outing ON DELETE CASCADE ON UPDATE CASCADE,
+    searcher_id      SMALLINT  NOT NULL	REFERENCES search_member ON DELETE SET NULL ON UPDATE CASCADE,
+    search_type      SMALLINT  NOT NULL REFERENCES search_types ON DELETE CASCADE ON UPDATE CASCADE,
+    time_start       TIMESTAMP NOT NULL,
+    time_finish      TIMESTAMP,
+    evidence_id      INT       UNIQUE REFERENCES evidence ON DELETE CASCADE ON UPDATE CASCADE,
+    CHECK (time_finish > time_start)
+);
+CREATE TABLE IF NOT EXISTS messages
+(
+    id        	 SERIAL    PRIMARY KEY,
+    place_id     SMALLINT  NOT NULL REFERENCES places ON DELETE CASCADE ON UPDATE CASCADE,
+    dragon_types SMALLINT  NOT NULL,
+    sender       SMALLINT  REFERENCES search_teams (leader) ON DELETE SET NULL ON UPDATE CASCADE,
+    status       BOOLEAN   NOT NULL,
+    sending_time TIMESTAMP NOT NULL,
+    outing_id    INT       UNIQUE REFERENCES search_outing ON DELETE SET NULL ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS tamer_outing
+(
+    id        	SERIAL     PRIMARY KEY,
+    tamer       SMALLINT   NOT NULL REFERENCES workers ON DELETE CASCADE ON UPDATE CASCADE,
+    message     INT UNIQUE REFERENCES  messages ON DELETE CASCADE ON UPDATE CASCADE,
+    time_start  TIMESTAMP  NOT NULL,
+    time_finish TIMESTAMP,
+    result      BOOLEAN,
+    dragon_id   INT        UNIQUE REFERENCES dragons ON DELETE CASCADE ON UPDATE CASCADE,
+    CHECK(time_finish > time_start)
+);
+CREATE TABLE IF NOT EXISTS taming_stage
+(
+    id   SMALLSERIAL PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS tamer_outing_history
+(
+    id        	     BIGSERIAL    PRIMARY KEY,
+    tamer_outing_id  INT NOT NULL REFERENCES tamer_outing ON DELETE CASCADE ON UPDATE CASCADE,
+    taming_stage_id  SMALLINT  NOT NULL REFERENCES taming_stage ON DELETE CASCADE ON UPDATE CASCADE,
+    time_start       TIMESTAMP NOT NULL,
+    time_finish      TIMESTAMP,
+    dragon_reaction  BOOLEAN,
+    CHECK (time_finish > time_start)
+);
+CREATE TABLE IF NOT EXISTS things
+(
+    id   SERIAL      PRIMARY KEY,
+    name VARCHAR(30) NOT NULL UNIQUE
+);
+CREATE TABLE IF NOT EXISTS bag
+(
+    id   SERIAL      PRIMARY KEY,
+    thing_id  	    INT REFERENCES things ON DELETE SET NULL ON UPDATE CASCADE,
+    food_id  	    INT REFERENCES food ON DELETE SET NULL ON UPDATE CASCADE,
+    tamer_outing_id INT NOT NULL REFERENCES tamer_outing ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS use_things
+(
+    tamer_outing_history_id BIGINT NOT NULL REFERENCES tamer_outing_history ON DELETE CASCADE ON UPDATE CASCADE,
+    bag_id                  INT    NOT NULL REFERENCES bag ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY (tamer_outing_history_id, bag_id)
 );

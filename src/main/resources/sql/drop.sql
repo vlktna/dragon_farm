@@ -1,30 +1,5 @@
-DROP TYPE DAY_TIME CASCADE;
-DROP TYPE SEASON CASCADE;
-DROP TYPE CAGE_TYPE CASCADE;
-DROP TYPE GENDER CASCADE;
-DROP TYPE DRAGON_STATUS CASCADE;
-DROP TYPE TRANSFER_TYPE CASCADE;
-DROP TYPE WORKER_TYPE CASCADE;
-DROP TYPE SIZE CASCADE;
-
-DROP TABLE classes CASCADE;
-DROP TABLE characteristic_types CASCADE;
-DROP TABLE characteristic_levels CASCADE;
-DROP TABLE dragon_appearance CASCADE;
-DROP TABLE food CASCADE;
-DROP TABLE dragon_types CASCADE;
-DROP TABLE dragon_diet CASCADE;
-DROP TABLE cages CASCADE;
-DROP TABLE dragons CASCADE;
-DROP TABLE dragon_characteristics CASCADE;
-DROP TABLE people CASCADE;
-DROP TABLE transfer_dragon_results CASCADE;
-DROP TABLE transfer_dragon_history CASCADE;
-DROP TABLE workers CASCADE;
-DROP TABLE action_types CASCADE;
-DROP TABLE caring_and_train_actions CASCADE;
-DROP TABLE action_type_influence CASCADE;
-DROP TABLE dragon_carers_trainers CASCADE;
-DROP TABLE dragon_couples CASCADE;
-DROP TABLE children CASCADE;
--- DROP TABLE dragon_carers_trainers CASCADE;
+drop type if exists cage_type,color,day_time,dragon_status,gender,season,transfer_type,worker_type, size cascade;
+drop table if exists action_type_influence,action_types,bag,cages,caring_and_train_actions,characteristic_levels,characteristic_types,
+    children,classes,dragon_appearance,dragon_carers_trainers,dragon_characteristics,dragon_couples,dragon_diet,dragon_types,
+    dragons,evidence,find_types,food,habitat,messages,orders,people,places,search_member,search_outing,search_teams,search_types,seartch_history,
+    tamer_outing,tamer_outing_history,taming_stage,terrains,things,transfer_dragon_history,transfer_dragon_results,use_things,workers;
