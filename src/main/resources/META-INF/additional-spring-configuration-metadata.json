@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "farm.security.key",
+      "type": "java.lang.String",
+      "description": "Description for farm.security.key."
+    }
+  ] }
