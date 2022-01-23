@@ -1,8 +1,9 @@
-package com.dragon.farm.coursework.endpoint
+package com.dragon.farm.coursework.endpoint.controller
 
 import com.dragon.farm.coursework.data.entitity.PeopleEntity
 import com.dragon.farm.coursework.data.enum.Gender
 import com.dragon.farm.coursework.data.service.PeopleService
+import com.dragon.farm.coursework.data.service.WorkerService
 import com.dragon.farm.coursework.security.service.UserService
 import com.dragon.farm.coursework.security.config.Token
 import com.dragon.farm.coursework.endpoint.dto.login.LoginRequest
@@ -34,7 +35,8 @@ class UserController @Autowired constructor(
     private val authenticationManager: AuthenticationManager,
     private val userDetailsService: UserDetailsServiceImpl,
     private val tokenUtil: Token,
-    private val peopleService: PeopleService
+    private val peopleService: PeopleService,
+    private val workerService: WorkerService
 ) {
 
     @PostMapping("/login")
@@ -50,7 +52,8 @@ class UserController @Autowired constructor(
                 newUser.userName,
                 person.name,
                 person.surname,
-                peopleService.getUserRole(person.id!!),
+                newUser.role,
+                workerService.getWorkerTypeByPersonId(person.id!!),
                 getJwt(user.userName)
             ), HttpStatus.OK
         )
@@ -88,6 +91,7 @@ class UserController @Autowired constructor(
                 newPerson.name,
                 newPerson.surname,
                 newUser.role,
+                workerService.getWorkerTypeByPersonId(newPerson.id!!),
                 getJwt(userRequest.userName)
             ), HttpStatus.OK
         )

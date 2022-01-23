@@ -1,8 +1,10 @@
 package com.dragon.farm.coursework.data.enum
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 enum class TrainingLevel(val typeName: String) {
-    WILD("wild"),
-    ELEMENTARY("elementary"),
-    INTERMEDIATE("intermediate"),
-    ADVANCED("advanced")
+    @JsonProperty("wild") WILD("wild"),
+    @JsonProperty("elementary") ELEMENTARY("elementary"),
+    @JsonProperty("intermediate") INTERMEDIATE("intermediate"),
+    @JsonProperty("advanced") ADVANCED("advanced")
 }

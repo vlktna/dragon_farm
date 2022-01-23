@@ -1,5 +1,6 @@
 package com.dragon.farm.coursework.endpoint.dto.login
 
+import com.dragon.farm.coursework.data.enum.WorkerType
 import com.dragon.farm.coursework.security.entity.UserRole
 
 data class LoginResponse(
@@ -8,5 +9,6 @@ data class LoginResponse(
     val name: String?,
     val surname: String?,
     val role: UserRole?,
+    val workerType: WorkerType?,
     val jwt: String,
 )

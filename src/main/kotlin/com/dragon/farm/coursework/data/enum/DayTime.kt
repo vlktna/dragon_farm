@@ -1,6 +1,8 @@
 package com.dragon.farm.coursework.data.enum
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 enum class DayTime(val typeName: String) {
-    DAY("day"),
-    NIGHT("night")
+    @JsonProperty("day") DAY("day"),
+    @JsonProperty("night") NIGHT("night")
 }

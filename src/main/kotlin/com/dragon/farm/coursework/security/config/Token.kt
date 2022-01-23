@@ -27,8 +27,8 @@ class Token {
         return Jwts.parser().setSigningKey(key.toByteArray(StandardCharsets.UTF_8)).parseClaimsJws(token).body
     }
 
-    fun getId(token: String): Int {
-        return extractAllClaims(token)!!.get("userId", Int::class.java)
+    fun getId(token: String): Long {
+        return extractAllClaims(token)!!.get("userId", Integer::class.java).toLong()
     }
 
     fun generateToken(userDetails: UserDetails, id: Long): String {
