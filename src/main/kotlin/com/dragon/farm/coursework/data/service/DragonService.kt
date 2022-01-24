@@ -1,11 +1,10 @@
 package com.dragon.farm.coursework.data.service
 
+import com.dragon.farm.coursework.data.repository.ClassRepository
 import com.dragon.farm.coursework.data.repository.DragonAppearanceRepository
-import com.dragon.farm.coursework.data.repository.DragonCharacteristicRepository
 import com.dragon.farm.coursework.data.repository.DragonRepository
 import com.dragon.farm.coursework.data.repository.DragonTypeRepository
 import com.dragon.farm.coursework.endpoint.dto.dragon.DragonAppearanceResponse
-import com.dragon.farm.coursework.endpoint.dto.dragon.DragonCharacteristicsResponse
 import com.dragon.farm.coursework.endpoint.dto.dragon.DragonResponse
 import com.dragon.farm.coursework.endpoint.dto.dragon.ShortDragonResponse
 import com.dragon.farm.coursework.security.entity.UserDetailsRepository
@@ -20,6 +19,7 @@ class DragonService @Autowired constructor(
     private val dragonTypeRepository: DragonTypeRepository,
     private val dragonAppearanceRepository: DragonAppearanceRepository,
     private val userRepository: UserDetailsRepository,
+    private val classRepository: ClassRepository
 ) {
 
     @Lazy
@@ -36,12 +36,14 @@ class DragonService @Autowired constructor(
 
     fun getDragonById(id: Long): DragonResponse? {
         val dragonEntity = dragonRepository.findById(id)
+        val dragonType = dragonTypeRepository.getById(dragonEntity.get().typeId!!)
         if (dragonEntity.isPresent) {
             return DragonResponse(
                 dragonEntity.get().id,
                 dragonEntity.get().name,
                 dragonEntity.get().trainingLevel,
-                dragonEntity.get().typeId,
+                dragonType.name,
+                classRepository.getById(dragonType.classId!!).name,
                 dragonEntity.get().dateOfBirth,
                 dragonEntity.get().dateOfDeath,
                 dragonEntity.get().gender,
