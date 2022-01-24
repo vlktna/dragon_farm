@@ -16,7 +16,7 @@ data class DragonResponse(
     val gender: Gender?,
     val cageId: Long?,
     val dragonStatus: DragonStatus?,
-    val dragonCharacteristics: List<DragonCharacteristicsResponse>?,
+    val dragonCharacteristics: DragonCharacteristicsResponse?,
     val abilities: List<String>?,
     val dragonAppearance: DragonAppearanceResponse?
 )

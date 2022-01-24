@@ -2,6 +2,7 @@ package com.dragon.farm.coursework.data.service
 
 import com.dragon.farm.coursework.data.entitity.DragonCharacteristicEntity
 import com.dragon.farm.coursework.data.enum.ActionType
+import com.dragon.farm.coursework.data.enum.DragonCharacteristic
 import com.dragon.farm.coursework.data.repository.ActionTypeInfluenceRepository
 import com.dragon.farm.coursework.data.repository.DragonCharacteristicRepository
 import com.dragon.farm.coursework.endpoint.dto.dragon.DragonCharacteristicsResponse
@@ -15,9 +16,23 @@ class DragonCharacteristicService @Autowired constructor(
     private val influenceRepository: ActionTypeInfluenceRepository
 ) {
 
-    fun getCharacteristics(id: Long): List<DragonCharacteristicsResponse> {
-        return dragonCharacteristicRepository.findByDragonId(id)
-            .map { DragonCharacteristicsResponse(it.charType, it.value) }
+    fun getCharacteristics(id: Long): DragonCharacteristicsResponse {
+        val response = DragonCharacteristicsResponse(0, 0, 0)
+        dragonCharacteristicRepository.findByDragonId(id).forEach {
+            when (it.charType) {
+                DragonCharacteristic.HEALTH -> {
+                    response.health = it.value!!
+                }
+                DragonCharacteristic.HAPPINESS -> {
+                    response.happiness = it.value!!
+                }
+                DragonCharacteristic.TRAINING -> {
+                    response.training = it.value!!
+                }
+                else -> {}
+            }
+        }
+        return response
     }
 
     @Transactional

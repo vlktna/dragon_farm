@@ -1,5 +1,3 @@
 package com.dragon.farm.coursework.endpoint.dto.dragon
 
-import com.dragon.farm.coursework.data.enum.DragonCharacteristic
-
-data class DragonCharacteristicsResponse(val dragonCharacteristic: DragonCharacteristic?, val value: Int?)
+data class DragonCharacteristicsResponse(var health: Int, var training: Int, var happiness: Int)
