@@ -10,5 +10,6 @@ data class LoginResponse(
     val surname: String?,
     val role: UserRole?,
     val workerType: WorkerType?,
+    val reputation: Int?,
     val jwt: String,
 )

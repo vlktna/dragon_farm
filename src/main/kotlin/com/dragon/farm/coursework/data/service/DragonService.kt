@@ -12,6 +12,10 @@ import com.dragon.farm.coursework.security.entity.UserRole
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Lazy
 import org.springframework.stereotype.Service
+import java.time.LocalDate
+import java.time.Period
+import java.util.*
+import kotlin.time.Duration.Companion.days
 
 @Service
 class DragonService @Autowired constructor(
@@ -44,8 +48,7 @@ class DragonService @Autowired constructor(
                 dragonEntity.get().trainingLevel,
                 dragonType.name,
                 classRepository.getById(dragonType.classId!!).name,
-                dragonEntity.get().dateOfBirth,
-                dragonEntity.get().dateOfDeath,
+                getAge(dragonEntity.get().dateOfBirth,  dragonEntity.get().dateOfDeath),
                 dragonEntity.get().gender,
                 dragonEntity.get().cageId,
                 dragonEntity.get().dragonStatus,
@@ -79,5 +82,13 @@ class DragonService @Autowired constructor(
 
     private fun getAbilities(typeId: Long): List<String> {
         return dragonTypeRepository.getAbilitiesByClassId(dragonTypeRepository.getById(typeId).classId!!)
+    }
+
+    private fun getAge(dateOfBirth: Date?, dateOfDeath: Date?): Int {
+        return if (dateOfDeath == null) {
+            Date().year - dateOfBirth!!.year
+        } else {
+            dateOfDeath.year - dateOfBirth!!.year
+        }
     }
 }

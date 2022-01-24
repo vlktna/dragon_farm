@@ -54,6 +54,7 @@ class UserController @Autowired constructor(
                 person.surname,
                 newUser.role,
                 workerService.getWorkerTypeByPersonId(person.id!!),
+                person.reputation,
                 getJwt(user.userName)
             ), HttpStatus.OK
         )
@@ -92,6 +93,7 @@ class UserController @Autowired constructor(
                 newPerson.surname,
                 newUser.role,
                 workerService.getWorkerTypeByPersonId(newPerson.id!!),
+                newPerson.reputation,
                 getJwt(userRequest.userName)
             ), HttpStatus.OK
         )
