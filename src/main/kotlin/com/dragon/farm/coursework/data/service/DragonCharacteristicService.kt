@@ -28,9 +28,23 @@ class DragonCharacteristicService @Autowired constructor(
             val newChar = DragonCharacteristicEntity()
             newChar.charType = curChar.charType
             newChar.dragonId = curChar.dragonId
-            newChar.value = curChar.value!! + actionTypeInfl.influenceValue!!
+            newChar.value = getNewValue(curChar.value!!, actionTypeInfl.influenceValue!!)
             dragonCharacteristicRepository.delete(curChar)
             dragonCharacteristicRepository.save(newChar)
+        }
+    }
+
+    private fun getNewValue(oldValue: Int, influenceValue: Int):Int {
+        return when {
+            oldValue + influenceValue > 100 -> {
+                100
+            }
+            oldValue + influenceValue < 0 -> {
+                0
+            }
+            else -> {
+                oldValue + influenceValue
+            }
         }
     }
 }
