@@ -21,4 +21,9 @@ class RestResponseEntityExceptionHandler: ResponseEntityExceptionHandler() {
     protected fun handleAuthenticationException(ex: BadCredentialsException, request: WebRequest): ResponseEntity<ExceptionResponse> {
         return ResponseEntity<ExceptionResponse>(ExceptionResponse("Wrong password", HttpStatus.UNAUTHORIZED), HttpStatus.UNAUTHORIZED)
     }
+
+    @ExceptionHandler(value = [java.lang.Exception::class, java.lang.Exception::class])
+    protected fun handleAuthenticationException(ex: java.lang.Exception, request: WebRequest): ResponseEntity<ExceptionResponse> {
+        return ResponseEntity<ExceptionResponse>(ExceptionResponse(ex.message, HttpStatus.INTERNAL_SERVER_ERROR), HttpStatus.INTERNAL_SERVER_ERROR)
+    }
 }

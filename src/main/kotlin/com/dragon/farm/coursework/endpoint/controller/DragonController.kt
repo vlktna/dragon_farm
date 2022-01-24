@@ -1,5 +1,6 @@
 package com.dragon.farm.coursework.endpoint.controller
 
+import com.dragon.farm.coursework.data.repository.DragonTypeRepository
 import com.dragon.farm.coursework.data.service.ActionService
 import com.dragon.farm.coursework.data.service.DragonService
 import com.dragon.farm.coursework.endpoint.dto.dragon.ActionRequest
@@ -32,9 +33,12 @@ class DragonController {
     @Autowired
     lateinit var actionService: ActionService
 
+    @Autowired
+    lateinit var dragonTypeRepository: DragonTypeRepository
+
     @Lazy
     @Autowired
-    lateinit var token: Token;
+    lateinit var token: Token
 
     @GetMapping("/{id}")
     fun getDragon(@PathVariable id: Long): DragonResponse {
@@ -47,6 +51,11 @@ class DragonController {
     @GetMapping("/all")
     fun getAllDragons(@RequestHeader("Authorization") jwt: String): List<ShortDragonResponse> {
         return dragonService.getDragonsByUserId(token.getId(jwt))
+    }
+
+    @GetMapping("/abilities")
+    fun getAllDragons(): List<String> {
+        return dragonTypeRepository.getAllAbilities()
     }
 
     @Transactional

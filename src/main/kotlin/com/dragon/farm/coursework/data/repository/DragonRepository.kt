@@ -12,4 +12,8 @@ interface DragonRepository : JpaRepository<DragonEntity, Long> {
         nativeQuery = true
     )
     fun getTrainingLevel(newValue: Int): TrainingLevel
+
+    fun findAllByTrainingLevel(trainingLevel1: TrainingLevel): List<DragonEntity>
+
+    fun findAllByTrainingLevelOrTrainingLevel(trainingLevel1: TrainingLevel, trainingLevel2: TrainingLevel): List<DragonEntity>
 }

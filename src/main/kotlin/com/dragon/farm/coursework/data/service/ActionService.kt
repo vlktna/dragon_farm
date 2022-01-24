@@ -24,7 +24,7 @@ class ActionService @Autowired constructor(
             dragonCharacteristicService.updateCharacteristics(action.dragonId, action.actionType)
             dragonCharacteristicService.getCharacteristics(action.dragonId).forEach {
                 if (it.dragonCharacteristic == DragonCharacteristic.TRAINING) {
-                    curDragon.trainingLevel = dragonRepository.getTrainingLevel(it!!.value!!)
+                    curDragon.trainingLevel = dragonRepository.getTrainingLevel(it.value!!)
                 }
                 if (it.value!! <= 0) {
                     when (it.dragonCharacteristic) {

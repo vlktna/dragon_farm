@@ -10,4 +10,12 @@ interface DragonTypeRepository : JpaRepository<DragonTypeEntity, Long> {
         nativeQuery = true
     )
     fun getAbilitiesByClassId(classId: Long): List<String>
+
+    @Query(
+        value = "select a.name from dragon_abilities a",
+        nativeQuery = true
+    )
+    fun getAllAbilities(): List<String>
+
+    fun findByClassIdIn(classId: List<Long>): List<DragonTypeEntity>
 }
