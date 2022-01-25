@@ -13,6 +13,7 @@ import com.dragon.farm.coursework.data.repository.TransferDragonHistoryRepositor
 import com.dragon.farm.coursework.data.repository.TransferDragonResultsRepository
 import com.dragon.farm.coursework.data.service.DragonCharacteristicService
 import com.dragon.farm.coursework.endpoint.dto.dragon.ShortDragonResponse
+import com.dragon.farm.coursework.endpoint.dto.transfer.FinishTransferResponse
 import com.dragon.farm.coursework.endpoint.dto.transfer.StartTransferRequest
 import com.dragon.farm.coursework.endpoint.dto.transfer.TransferRequest
 import com.dragon.farm.coursework.security.config.Token
@@ -102,7 +103,7 @@ class TransferController {
     fun finishTransfer(
         @RequestHeader("Authorization") jwt: String,
         @PathVariable dragonId: Long
-    ): ResponseEntity<String> {
+    ): ResponseEntity<FinishTransferResponse> {
         val person = peopleRepository.findById(userRepository.findById(token.getId(jwt)).get().personId!!).get()
         val transfer = transferRepository.findById(
             TransferDragonHistoryEntity.TransferDragonHistoryId().apply {
@@ -135,6 +136,6 @@ class TransferController {
         transfer.timeFinish = Date()
         transfer.resultId = result.id
         transferRepository.save(transfer)
-        return ResponseEntity<String>(result.name, HttpStatus.OK)
+        return ResponseEntity<FinishTransferResponse>(FinishTransferResponse(person.reputation), HttpStatus.OK)
     }
 }
